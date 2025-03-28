@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Vancyn</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="seventeen_song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <div id="passwordPage">
+        <h2>Enter the Password</h2>
+        <input type="password" id="passwordInput" placeholder="Enter Password">
+        <button onclick="checkPassword()">Enter</button>
+    </div>
+    
+    <div id="mainContent" style="display:none;">
+        <h1>Happy Birthday Vancyn!</h1>
+        <p>I made this website especially for you...</p>
+        
+        <nav>
+            <button onclick="showPage('lettersPage')">Letters</button>
+            <button onclick="showPage('writeLetterPage')">Write a Letter</button>
+            <button onclick="showPage('ourStoryPage')">Our Story</button>
+            <button onclick="showPage('picturesPage')">Pictures</button>
+        </nav>
+        
+        <div id="lettersPage" class="page" style="display:none;">
+            <h2>Letters</h2>
+            <div id="lettersList"></div>
+        </div>
+        
+        <div id="writeLetterPage" class="page" style="display:none;">
+            <h2>Write a Letter</h2>
+            <input type="text" id="fromName" placeholder="From">
+            <input type="text" id="toName" placeholder="To">
+            <textarea id="letterContent" placeholder="Write your letter..."></textarea>
+            <button onclick="saveLetter()">Done</button>
+        </div>
+        
+        <div id="ourStoryPage" class="page" style="display:none;">
+            <h2>Our Story</h2>
+            <input type="file" id="storyImageUpload" onchange="uploadImage('storyContainer', this)">
+            <div id="storyContainer"></div>
+        </div>
+        
+        <div id="picturesPage" class="page" style="display:none;">
+            <h2>Pictures</h2>
+            <input type="file" id="picturesUpload" multiple onchange="uploadImage('picturesContainer', this)">
+            <div id="picturesContainer"></div>
+        </div>
+    </div>
+</body>
+</html>
